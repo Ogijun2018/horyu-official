@@ -1,0 +1,12 @@
+{
+  "name": "horyu.work",
+  "version": "1.0.0",
+  "description": "Horyu Official Site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jun Ogino <ogijun.mk@hotmail.co.jp>",
+  "license": "ISC"
+}
