@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+@media screen and (min-width: 560px) {
+  .wrapper {
+    margin: 0 3rem;
+  }
+}
+
+header {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: lavender;
+}
+
+footer {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: lavender;
+  display: flex;
+  justify-content: space-between;
+
+  ul {
+    display: flex;
+    list-style-type: none;
+  }
+
+  li:not(:first-child) {
+    margin-left: 1rem;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.content {
+  margin: 1rem;
+}
+
+.link {
+  text-decoration: none;
+}
