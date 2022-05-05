@@ -10,6 +10,12 @@
     "jsx": "react",
     "strict": true,
     "esModuleInterop": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "graphql-types": [
+        "types/graphql-types",
+        "types/graphql-types-stub"
+      ]
+    },
   }
 }

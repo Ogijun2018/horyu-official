@@ -1,11 +1,12 @@
 import React from 'react';
 import type { FC } from 'react';
-import {Link} from 'gatsby';
+import { Link } from 'gatsby';
+import { Text, Avatar, AvatarBadge, AvatarGroup } from '@chakra-ui/react';
 
 export const Header: FC = () => (
   <header>
-    <h3>
-      <Link to='/' className="link">保留</Link>
-    </h3>
+    <Link to="/" className="link">
+      <Avatar bg="teal.500" />
+    </Link>
   </header>
-)
+);
