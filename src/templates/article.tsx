@@ -4,6 +4,7 @@ import { Layout } from '../components/layout';
 import { graphql } from 'gatsby';
 import type { ArticlePageContext } from '../../gatsby-node';
 import type { ArticleTemplateQuery } from '../../types/graphql-types';
+import { Text, Container } from '@chakra-ui/react';
 
 interface PageProps {
   data: ArticleTemplateQuery;
@@ -12,17 +13,20 @@ interface PageProps {
 
 const Page: FC<PageProps> = ({ data }) => (
   <Layout>
-    <h1 className="article-title">
+    <Text fontSize="4xl" fontWeight="extrabold">
       {data.markdownRemark?.frontmatter?.title ?? '(no title)'}
-    </h1>
+    </Text>
     {data.markdownRemark?.frontmatter?.date && (
-      <p className="article-date">{data.markdownRemark.frontmatter.date}</p>
+      <Text>{data.markdownRemark.frontmatter.date}</Text>
     )}
-    <hr />
-    <div
-      className="article-body"
-      dangerouslySetInnerHTML={{ __html: data.markdownRemark?.html ?? '' }}
-    />
+
+    <br />
+    <Container width="100%">
+      <Text
+        fontWeight="bold"
+        dangerouslySetInnerHTML={{ __html: data.markdownRemark?.html ?? '' }}
+      ></Text>
+    </Container>
   </Layout>
 );
 export default Page;
