@@ -14,35 +14,26 @@ html {
   }
 }
 
+.wrapper {
+  margin-bottom: 3rem;
+}
+
 header {
   margin-bottom: 1rem;
   padding: 1rem;
-  background: lavender;
 }
 
-footer {
-  margin-top: 1rem;
-  padding: 1rem;
-  background: lavender;
+.content {
   display: flex;
-  justify-content: space-between;
-
-  ul {
-    display: flex;
-    list-style-type: none;
-  }
-
-  li:not(:first-child) {
-    margin-left: 1rem;
-  }
+  justify-content: center;
 }
 
 a {
   text-decoration: none;
 }
 
-.content {
-  margin: 1rem;
+.twitter-link {
+  text-decoration: underline
 }
 
 .link {

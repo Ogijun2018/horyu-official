@@ -1,6 +1,6 @@
 ---
 title: "保留"
-slug: /horyu
+slug: /CMCD-001
 date: 2022-04-24T00:00:00
 ---
 

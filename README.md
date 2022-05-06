@@ -1,6 +1,6 @@
 # horyu-official
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7ab0e04a-a53e-4ac4-a276-9adc8c50b2d8/deploy-status)](https://app.netlify.com/sites/spiffy-churros-3d41c2/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e557a1e5-5dbd-49c9-9751-c2b53d81c6a7/deploy-status)](https://app.netlify.com/sites/coruscating-peony-3957c5/deploys)
 
 ## debug
 `npx gatsby develop`

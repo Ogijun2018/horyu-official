@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
 import type { FC } from 'react';
 import { Header } from '../components/header';
-import { Footer } from '../components/footer';
 import '../styles/index.scss';
+import { Container } from '@chakra-ui/react';
 
 interface Props {
   children: ReactNode;
@@ -11,7 +11,6 @@ interface Props {
 export const Layout: FC<Props> = ({ children }) => (
   <div className="wrapper">
     <Header />
-    <div className="content">{children}</div>
-    <Footer />
+    <Container maxW="5xl">{children}</Container>
   </div>
 );

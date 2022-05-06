@@ -2,9 +2,23 @@ import React from 'react';
 import type { FC } from 'react';
 import { graphql, Link } from 'gatsby';
 import { Layout } from '../components/layout';
+import { CommingSoon } from '../components/comming-soon';
 import type { IndexPageQuery } from '../../types/graphql-types';
-import { SimpleGrid, Box, Image, Badge, Center } from '@chakra-ui/react';
-import jacketImg from '../../articles/horyu_jacket.png';
+import { HiOutlineMail } from '@react-icons/all-files/hi/HiOutlineMail';
+import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter';
+import {
+  SimpleGrid,
+  Box,
+  Image,
+  Badge,
+  Text,
+  Stack,
+  Container,
+  Button,
+  ButtonGroup,
+  HStack
+} from '@chakra-ui/react';
+import jacketImg from '../img/horyu_jacket.png';
 
 interface PageProps {
   data: IndexPageQuery;
@@ -12,66 +26,109 @@ interface PageProps {
 
 const Page: FC<PageProps> = ({ data }) => (
   <Layout>
-    <SimpleGrid minChildWidth="250px" spacing="20px">
-      {data.allMarkdownRemark.edges.map(edge => {
-        if (!edge.node.frontmatter?.slug) return null;
+    <Stack spacing={3}>
+      <Text fontSize="5xl" fontWeight="extrabold">
+        News
+      </Text>
+      <Container>
+        <Text fontWeight="semibold">
+          2022/04/24{' '}
+          <Link to="/CMCD-001" className="twitter-link">
+            Exhibited at M3-2022 spring.
+          </Link>
+        </Text>
+      </Container>
+      <Text fontSize="5xl" fontWeight="extrabold">
+        Member
+      </Text>
+      <Container>
+        <Text fontSize="2xl" fontWeight="light">
+          All music compose:{' '}
+          <a
+            href="https://twitter.com/shimaemon_o3o?s=20&t=EuOSrezuLVXAOaS4SRM80w"
+            className="twitter-link"
+          >
+            shimaemon
+          </a>
+        </Text>
+        <Text fontSize="2xl" fontWeight="light">
+          Illustration:{' '}
+          <a
+            href="https://twitter.com/cat_earthen_pot?s=20&t=EuOSrezuLVXAOaS4SRM80w"
+            className="twitter-link"
+          >
+            猫土瓶
+          </a>
+        </Text>
+        <Text fontSize="2xl" fontWeight="light">
+          Design, Movie, Web:{' '}
+          <a
+            href="https://twitter.com/ogijun_design?s=20&t=EuOSrezuLVXAOaS4SRM80w"
+            className="twitter-link"
+          >
+            ogijun
+          </a>
+        </Text>
+      </Container>
 
-        const slug = edge.node.frontmatter.slug;
+      <Text fontSize="5xl" fontWeight="extrabold">
+        Discography
+      </Text>
+      <SimpleGrid
+        minChildWidth="200px"
+        spacing="30px"
+        columns={4}
+        alignItems="center"
+        justifyContent="center"
+      >
+        {data.allMarkdownRemark.edges.map(edge => {
+          if (!edge.node.frontmatter?.slug) {
+            return <CommingSoon />;
+          }
 
-        return (
-          // <Box key={edge.node.frontmatter.slug}>
-          //   <Link key={slug} className="article-list-item" to={slug}>
-          //     {edge.node.frontmatter.date && (
-          //       <p className="article-list-item-date">
-          //         {edge.node.frontmatter.date}
-          //       </p>
-          //     )}
-          //     <h1>{edge.node.frontmatter.title ?? '(無題)'}</h1>
-          //     {edge.node.excerpt && (
-          //       <p className="article-list-item-excerpt">{edge.node.excerpt}</p>
-          //     )}
-          //   </Link>
-          // </Box>
-          <Link key={slug} className="article-list-item" to={slug}>
+          const slug = edge.node.frontmatter.slug;
+
+          return (
             <Box
               key={edge.node.frontmatter.slug}
-              maxW="sm"
-              borderWidth="1px"
-              borderRadius="lg"
+              maxW="250px"
+              border="none"
+              borderBottom="3px solid black"
               overflow="hidden"
             >
-              <Image src={jacketImg} alt="jacketImg" />
+              <Link key={slug} className="article-list-item" to={slug}>
+                <Image src={jacketImg} alt="jacketImg" />
 
-              <Box p="6">
-                <Box display="flex">
-                  <Badge borderRadius="full" px="2" colorScheme="pink">
-                    New
-                  </Badge>
-                  {edge.node.frontmatter.date && (
-                    <Box
-                      color="gray.500"
-                      fontWeight="semibold"
-                      letterSpacing="wide"
-                      fontSize="xs"
-                      textTransform="uppercase"
-                      ml="2"
-                    >
-                      {edge.node.frontmatter.date}
-                    </Box>
-                  )}
-                </Box>
+                <Box p="6">
+                  <Box display="flex">
+                    <Badge borderRadius="full" px="2" colorScheme="pink">
+                      New
+                    </Badge>
+                    {edge.node.frontmatter.date && (
+                      <Box
+                        color="gray.500"
+                        fontWeight="semibold"
+                        letterSpacing="wide"
+                        fontSize="xs"
+                        textTransform="uppercase"
+                        ml="2"
+                      >
+                        {edge.node.frontmatter.date}
+                      </Box>
+                    )}
+                  </Box>
 
-                <Box
-                  mt="1"
-                  fontWeight="semibold"
-                  as="h4"
-                  lineHeight="tight"
-                  isTruncated
-                >
-                  {edge.node.frontmatter.title ?? 'no title'}
-                </Box>
+                  <Box
+                    mt="1"
+                    fontWeight="semibold"
+                    as="h4"
+                    lineHeight="tight"
+                    isTruncated
+                  >
+                    {edge.node.frontmatter.title ?? 'no title'}
+                  </Box>
 
-                <Box>
+                  {/* <Box>
                   <Box as="span" color="gray.600" fontSize="sm">
                     {edge.node.excerpt && (
                       <p className="article-list-item-excerpt">
@@ -79,13 +136,37 @@ const Page: FC<PageProps> = ({ data }) => (
                       </p>
                     )}
                   </Box>
+                </Box> */}
                 </Box>
-              </Box>
+              </Link>
             </Box>
-          </Link>
-        );
-      })}
-    </SimpleGrid>
+          );
+        })}
+      </SimpleGrid>
+      <Text fontSize="5xl" fontWeight="extrabold">
+        Contact
+      </Text>
+      <Container>
+        <HStack>
+          <Button
+            as="a"
+            leftIcon={<HiOutlineMail />}
+            border="3px solid black"
+            href="mailto:chocotto.matte@gmail.com"
+          >
+            Email
+          </Button>
+          <Button
+            as="a"
+            leftIcon={<FaTwitter />}
+            border="3px solid black"
+            href="https://twitter.com/chocotto_matte?s=20&t=EuOSrezuLVXAOaS4SRM80w"
+          >
+            Twitter
+          </Button>
+        </HStack>
+      </Container>
+    </Stack>
   </Layout>
 );
 
