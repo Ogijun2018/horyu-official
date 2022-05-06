@@ -17,7 +17,7 @@ import {
   HStack,
   Flex
 } from '@chakra-ui/react';
-import jacketImg from '../img/horyu_jacket.png';
+import jacketImg from '../img/horyu_jacket.webp';
 
 interface PageProps {
   data: IndexPageQuery;
