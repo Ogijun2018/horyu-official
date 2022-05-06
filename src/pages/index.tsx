@@ -7,7 +7,6 @@ import type { IndexPageQuery } from '../../types/graphql-types';
 import { HiOutlineMail } from '@react-icons/all-files/hi/HiOutlineMail';
 import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter';
 import {
-  SimpleGrid,
   Box,
   Image,
   Badge,
@@ -15,8 +14,8 @@ import {
   Stack,
   Container,
   Button,
-  ButtonGroup,
-  HStack
+  HStack,
+  Flex
 } from '@chakra-ui/react';
 import jacketImg from '../img/horyu_jacket.png';
 
@@ -74,13 +73,7 @@ const Page: FC<PageProps> = ({ data }) => (
       <Text fontSize="5xl" fontWeight="extrabold">
         Discography
       </Text>
-      <SimpleGrid
-        minChildWidth="200px"
-        spacing="30px"
-        columns={4}
-        alignItems="center"
-        justifyContent="center"
-      >
+      <Flex justify="space-around" flexWrap="wrap" gap="30px">
         {data.allMarkdownRemark.edges.map(edge => {
           if (!edge.node.frontmatter?.slug) {
             return <CommingSoon />;
@@ -142,7 +135,7 @@ const Page: FC<PageProps> = ({ data }) => (
             </Box>
           );
         })}
-      </SimpleGrid>
+      </Flex>
       <Text fontSize="5xl" fontWeight="extrabold">
         Contact
       </Text>
