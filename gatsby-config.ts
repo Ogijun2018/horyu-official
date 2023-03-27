@@ -1,4 +1,3 @@
-import { resolve } from 'path';
 import type { GatsbyConfig } from 'gatsby';
 
 // setting plugin
@@ -22,7 +21,14 @@ const config: GatsbyConfig = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'articles',
-        path: resolve(__dirname, 'articles')
+        path: `${__dirname}/articles`
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: `${__dirname}/src/img`
       }
     },
     {
@@ -40,7 +46,35 @@ const config: GatsbyConfig = {
         isUsingColorMode: true
       }
     },
-    'gatsby-transformer-remark'
+    `gatsby-transformer-remark`,
+    // `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-relative-images`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: { maxWidth: 700 }
+          }
+        ]
+      }
+    }
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `images`,
+    //     path: `${__dirname}/src/images`,
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `src`,
+    //     path: `${__dirname}/src/`,
+    //   },
+    // },
   ]
 };
 export default config;

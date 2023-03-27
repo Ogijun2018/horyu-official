@@ -4,7 +4,11 @@ slug: /CMCD-002
 date: 2022-10-25T00:00:00
 ---
 
-保留 2nd Album
+![mixstream_jacket](../src/img/mixstream_jacket.png)
+
+<br>
+
+## 保留 2nd Album
 
 <br>
 音ゲー収録を夢見る新進気鋭コンポーザー shimaemon による
