@@ -8,7 +8,6 @@ import { HiOutlineMail } from '@react-icons/all-files/hi/HiOutlineMail';
 import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter';
 import {
   Box,
-  Image,
   Badge,
   Text,
   Stack,
@@ -17,8 +16,7 @@ import {
   HStack,
   Flex
 } from '@chakra-ui/react';
-import jacketImg from '../img/horyu_jacket.webp';
-import mixstreamImg from '../img/mixstream_jacket.png';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 interface PageProps {
   data: IndexPageQuery;
@@ -97,13 +95,22 @@ const Page: FC<PageProps> = ({ data }) => (
               overflow="hidden"
             >
               <Link key={slug} className="article-list-item" to={slug}>
-                {index == 0 && <Image src={mixstreamImg} alt="jacketImg" />}
-                {index == 1 && <Image src={jacketImg} alt="jacketImg" />}
-
+                <GatsbyImage
+                  image={getImage(
+                    edge.node.frontmatter.topImage?.childImageSharp
+                  )}
+                  alt={edge.node.frontmatter.title ?? 'no title'}
+                />
                 <Box p="6">
                   <Box display="flex">
                     {index == 0 && (
-                      <Badge borderRadius="full" px="2" colorScheme="pink">
+                      <Badge
+                        borderRadius="full"
+                        px="2"
+                        colorScheme="pink"
+                        ml="-1"
+                        mr="2"
+                      >
                         New
                       </Badge>
                     )}
@@ -114,7 +121,6 @@ const Page: FC<PageProps> = ({ data }) => (
                         letterSpacing="wide"
                         fontSize="xs"
                         textTransform="uppercase"
-                        ml="2"
                       >
                         {edge.node.frontmatter.date}
                       </Box>
@@ -185,6 +191,15 @@ export const query = graphql`
             date(formatString: "YYYY/MM/DD", locale: "ja-JP")
             slug
             title
+            topImage {
+              childImageSharp {
+                gatsbyImageData(
+                  blurredOptions: { width: 100 }
+                  width: 600
+                  placeholder: BLURRED
+                )
+              }
+            }
           }
         }
       }

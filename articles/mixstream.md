@@ -2,11 +2,8 @@
 title: "MixstreaM"
 slug: /CMCD-002
 date: 2022-10-25T00:00:00
+topImage: "../src/img/mixstream_jacket.png"
 ---
-
-![mixstream_jacket](../src/img/mixstream_jacket.png)
-
-<br>
 
 ## 保留 2nd Album
 

@@ -2,6 +2,7 @@
 title: "保留"
 slug: /CMCD-001
 date: 2022-04-24T00:00:00
+topImage: "../src/img/horyu_jacket.webp"
 ---
 
     01. Vault of Heaven
