@@ -1,11 +1,11 @@
-import React from "react";
-import type { FC } from "react";
-import { graphql, Link } from "gatsby";
-import { Layout } from "../components/layout";
-import { CommingSoon } from "../components/comming-soon";
-import type { IndexPageQuery } from "../../types/graphql-types";
-import { HiOutlineMail } from "@react-icons/all-files/hi/HiOutlineMail";
-import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
+import React from 'react';
+import type { FC } from 'react';
+import { graphql, Link } from 'gatsby';
+import { Layout } from '../components/layout';
+import { CommingSoon } from '../components/comming-soon';
+import type { IndexPageQuery } from '../../types/graphql-types';
+import { HiOutlineMail } from '@react-icons/all-files/hi/HiOutlineMail';
+import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter';
 import {
   Box,
   Image,
@@ -15,10 +15,10 @@ import {
   Container,
   Button,
   HStack,
-  Flex,
-} from "@chakra-ui/react";
-import jacketImg from "../img/horyu_jacket.webp";
-import mixstreamImg from "../img/mixstream_jacket.png";
+  Flex
+} from '@chakra-ui/react';
+import jacketImg from '../img/horyu_jacket.webp';
+import mixstreamImg from '../img/mixstream_jacket.png';
 
 interface PageProps {
   data: IndexPageQuery;
@@ -32,13 +32,13 @@ const Page: FC<PageProps> = ({ data }) => (
       </Text>
       <Container>
         <Text fontWeight="semibold">
-          2022/10/30{" "}
+          2022/10/30{' '}
           <Link to="/CMCD-002" className="twitter-link">
             Exhibited at M3-2022 autumn.
           </Link>
         </Text>
         <Text fontWeight="semibold">
-          2022/04/24{" "}
+          2022/04/24{' '}
           <Link to="/CMCD-001" className="twitter-link">
             Exhibited at M3-2022 spring.
           </Link>
@@ -49,7 +49,7 @@ const Page: FC<PageProps> = ({ data }) => (
       </Text>
       <Container>
         <Text fontSize="2xl" fontWeight="light">
-          All music compose:{" "}
+          All music compose:{' '}
           <a
             href="https://twitter.com/shimaemon_o3o?s=20&t=EuOSrezuLVXAOaS4SRM80w"
             className="twitter-link"
@@ -58,7 +58,7 @@ const Page: FC<PageProps> = ({ data }) => (
           </a>
         </Text>
         <Text fontSize="2xl" fontWeight="light">
-          Illustration:{" "}
+          Illustration:{' '}
           <a
             href="https://twitter.com/cat_earthen_pot?s=20&t=EuOSrezuLVXAOaS4SRM80w"
             className="twitter-link"
@@ -67,7 +67,7 @@ const Page: FC<PageProps> = ({ data }) => (
           </a>
         </Text>
         <Text fontSize="2xl" fontWeight="light">
-          Design, Movie, Web:{" "}
+          Design, Movie, Web:{' '}
           <a
             href="https://twitter.com/ogijun_design?s=20&t=EuOSrezuLVXAOaS4SRM80w"
             className="twitter-link"
@@ -128,7 +128,7 @@ const Page: FC<PageProps> = ({ data }) => (
                     lineHeight="tight"
                     isTruncated
                   >
-                    {edge.node.frontmatter.title ?? "no title"}
+                    {edge.node.frontmatter.title ?? 'no title'}
                   </Box>
 
                   {/* <Box>
@@ -177,7 +177,7 @@ export default Page;
 
 export const query = graphql`
   query IndexPage {
-    allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
+    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
       edges {
         node {
           excerpt
