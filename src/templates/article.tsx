@@ -6,7 +6,7 @@ import type { ArticlePageContext } from '../../gatsby-node';
 import type { ArticleTemplateQuery } from '../../types/graphql-types';
 import { Text, Container } from '@chakra-ui/react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import 'github-markdown-css';
+import { MarkdownTemplate } from '../../src/components/MarkdownTemplate';
 
 interface PageProps {
   data: ArticleTemplateQuery;
@@ -31,10 +31,8 @@ const Page: FC<PageProps> = ({ data }) => (
         />
       )}
       <br />
-      <article className="markdown-body">
-        <div
-          dangerouslySetInnerHTML={{ __html: data.markdownRemark?.html ?? '' }}
-        ></div>
+      <article>
+        <MarkdownTemplate source={data.markdownRemark?.html} />
       </article>
     </Container>
   </Layout>

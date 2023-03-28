@@ -7,13 +7,6 @@ html {
   font-family: sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #0c1116;
-    color: #fff;
-  }
-}
-
 @media screen and (min-width: 560px) {
   .wrapper {
     margin: 0 3rem;
