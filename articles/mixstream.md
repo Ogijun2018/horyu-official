@@ -5,35 +5,35 @@ date: 2022-10-25T00:00:00
 topImage: "../src/img/mixstream_jacket.png"
 ---
 
-## 保留 2nd Album
+# Mixstream
 
-<br>
 音ゲー収録を夢見る新進気鋭コンポーザー shimaemon による
 
 全曲音ゲー向け 2 分尺の 5 曲入りアルバム！
 
 未来の音ゲー曲を今すぐチェックして友達に共有しよう！
 
-<br>
-Title: MixstreaM
+## About
 
-Circle: 保留
+**Title:** MixstreaM
 
-Release Date: 2022.10.30
+**Circle:** 保留
 
-Booth: M3-2022 秋 第一展示場 2F C-23a 「保留」
+**Release Date:** 2022.10.30
 
-Price: ¥500
+**Booth:** M3-2022 秋 第一展示場 2F C-23a 「保留」
 
-<br>
+**Price:** ¥500
+
+## Credit
+
 All Music Compose: shimaemon
 
 Illustrator: 猫土瓶
 
 Designer: ogijun
 
-<br>
-Tracklist:
+## Tracklist:
 
 1.  Caramel Emotion [EMOCORE]
 
@@ -45,6 +45,6 @@ Tracklist:
 
 5.  Ref[REC]tion [LIQUIDFUNK]
 
-<br>
+## Music Video
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qJUVPbXpGYw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

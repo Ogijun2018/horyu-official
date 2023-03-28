@@ -91,7 +91,7 @@ const Page: FC<PageProps> = ({ data }) => (
               key={edge.node.frontmatter.slug}
               maxW="250px"
               border="none"
-              borderBottom="3px solid black"
+              borderBottom="3px solid gray"
               overflow="hidden"
             >
               <Link key={slug} className="article-list-item" to={slug}>
@@ -160,7 +160,8 @@ const Page: FC<PageProps> = ({ data }) => (
           <Button
             as="a"
             leftIcon={<HiOutlineMail />}
-            border="3px solid black"
+            color="#DF5286"
+            border="3px solid gray"
             href="mailto:chocotto.matte@gmail.com"
           >
             Email
@@ -168,7 +169,8 @@ const Page: FC<PageProps> = ({ data }) => (
           <Button
             as="a"
             leftIcon={<FaTwitter />}
-            border="3px solid black"
+            border="3px solid gray"
+            color="#1DA1F2"
             href="https://twitter.com/chocotto_matte?s=20&t=EuOSrezuLVXAOaS4SRM80w"
           >
             Twitter

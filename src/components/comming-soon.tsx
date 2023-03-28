@@ -7,7 +7,7 @@ export const CommingSoon: FC = () => (
   <Box
     maxW="250px"
     border="none"
-    borderBottom="3px solid black"
+    borderBottom="3px solid gray"
     overflow="hidden"
   >
     <Image src={DummyImg} alt="jacketImg" />
