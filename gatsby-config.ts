@@ -9,25 +9,25 @@ const config: GatsbyConfig = {
     email: 'chocotto.matte@gmail.com'
   },
   plugins: [
-    'gatsby-plugin-sass',
+    `gatsby-plugin-sass`,
     {
-      resolve: 'gatsby-plugin-graphql-codegen',
+      resolve: `gatsby-plugin-graphql-codegen`,
       options: {
-        fileName: 'types/graphql-types.d.ts',
+        fileName: `types/graphql-types.d.ts`,
         documentPaths: ['src/**/*.{ts,tsx}', 'gatsby-*.ts']
       }
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'articles',
+        name: `articles`,
         path: `${__dirname}/articles`
       }
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'images',
+        name: `images`,
         path: `${__dirname}/src/img`
       }
     },
@@ -39,7 +39,7 @@ const config: GatsbyConfig = {
       }
     },
     {
-      resolve: '@chakra-ui/gatsby-plugin',
+      resolve: `@chakra-ui/gatsby-plugin`,
       options: {
         /**
          * @property {boolean} [resetCSS=true]
@@ -62,6 +62,7 @@ const config: GatsbyConfig = {
       options: {
         plugins: [
           `gatsby-remark-relative-images`,
+          `gatsby-remark-embedder`,
           {
             resolve: `gatsby-remark-images`,
             options: { maxWidth: 700 }

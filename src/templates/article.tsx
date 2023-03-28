@@ -4,7 +4,7 @@ import { Layout } from '../components/layout';
 import { graphql } from 'gatsby';
 import type { ArticlePageContext } from '../../gatsby-node';
 import type { ArticleTemplateQuery } from '../../types/graphql-types';
-import { Text, Container } from '@chakra-ui/react';
+import { Text, Container, Box, Center } from '@chakra-ui/react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { MarkdownTemplate } from '../../src/components/MarkdownTemplate';
 
@@ -13,30 +13,34 @@ interface PageProps {
   pageContext: ArticlePageContext;
 }
 
-const Page: FC<PageProps> = ({ data }) => (
-  <Layout>
-    <Text fontSize="4xl" fontWeight="extrabold">
-      {data.markdownRemark?.frontmatter?.title ?? '(no title)'}
-    </Text>
-    <Text>{data.markdownRemark?.frontmatter?.date ?? ''}</Text>
+const Page: FC<PageProps> = ({ data }) => {
+  const img = getImage(
+    data.markdownRemark?.frontmatter?.topImage?.childImageSharp
+  );
+  return (
+    <Layout>
+      <Text fontSize="4xl" fontWeight="extrabold">
+        {data.markdownRemark?.frontmatter?.title ?? '(no title)'}
+      </Text>
+      <Text>{data.markdownRemark?.frontmatter?.date ?? ''}</Text>
 
-    <br />
-    <Container width="100%">
-      {data.markdownRemark?.frontmatter?.topImage?.childImageSharp && (
-        <GatsbyImage
-          image={getImage(
-            data.markdownRemark?.frontmatter?.topImage?.childImageSharp
-          )}
-          alt="hoge"
-        />
-      )}
       <br />
-      <article>
-        <MarkdownTemplate source={data.markdownRemark?.html} />
-      </article>
-    </Container>
-  </Layout>
-);
+      <Container width="100%">
+        {data.markdownRemark?.frontmatter?.topImage?.childImageSharp && (
+          <Center>
+            <Box maxW="md" boxShadow="xl" borderWidth="1px">
+              <GatsbyImage image={img} alt="hoge" />
+            </Box>
+          </Center>
+        )}
+        <br />
+        <article>
+          <MarkdownTemplate source={data.markdownRemark?.html} />
+        </article>
+      </Container>
+    </Layout>
+  );
+};
 export default Page;
 
 export const query = graphql`
