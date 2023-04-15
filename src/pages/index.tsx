@@ -30,6 +30,12 @@ const Page: FC<PageProps> = ({ data }) => (
       </Text>
       <Container>
         <Text fontWeight="semibold">
+          2023/04/30{' '}
+          <Link to="/CMCD-003" className="twitter-link">
+            Exhibited at M3-2023 spring.
+          </Link>
+        </Text>
+        <Text fontWeight="semibold">
           2022/10/30{' '}
           <Link to="/CMCD-002" className="twitter-link">
             Exhibited at M3-2022 autumn.
@@ -81,7 +87,17 @@ const Page: FC<PageProps> = ({ data }) => (
       <Flex justify="space-around" flexWrap="wrap" gap="30px">
         {data.allMarkdownRemark.edges.map((edge, index) => {
           if (!edge.node.frontmatter?.slug) {
-            return <CommingSoon />;
+            return (
+              <>
+                <CommingSoon />
+                <div className="item-empty">
+                  <CommingSoon />
+                </div>
+                <div className="item-empty">
+                  <CommingSoon />
+                </div>
+              </>
+            );
           }
 
           const slug = edge.node.frontmatter.slug;
@@ -138,14 +154,14 @@ const Page: FC<PageProps> = ({ data }) => (
                   </Box>
 
                   {/* <Box>
-                  <Box as="span" color="gray.600" fontSize="sm">
-                    {edge.node.excerpt && (
-                      <p className="article-list-item-excerpt">
-                        {edge.node.excerpt}
-                      </p>
-                    )}
-                  </Box>
-                </Box> */}
+                    <Box as="span" color="gray.600" fontSize="sm">
+                      {edge.node.excerpt && (
+                        <p className="article-list-item-excerpt">
+                          {edge.node.excerpt}
+                        </p>
+                      )}
+                    </Box>
+                  </Box> */}
                 </Box>
               </Link>
             </Box>
