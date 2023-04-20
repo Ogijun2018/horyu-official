@@ -10,8 +10,21 @@ import {
   Text
 } from '@react-three/drei';
 import { FlakesTexture } from 'three-stdlib';
-import { Container } from '@chakra-ui/react';
+import {
+  Container,
+  Center as UICenter,
+  Text as UIText,
+  VStack,
+  Divider,
+  Heading,
+  Highlight,
+  Box,
+  OrderedList,
+  ListItem,
+  Image
+} from '@chakra-ui/react';
 import Logo from '../img/onyourmark_logo.png';
+import Jacket from '../img/onyourmark_jacket.png';
 import { Header } from '../components/header';
 import '../styles/index.scss';
 
@@ -89,12 +102,81 @@ export default function onyourmark_lp() {
                 bias={0.001}
               />
             </AccumulativeShadows>
-            <Caption castShadow>{`まだ見ぬ自分へ走り出せ。`}</Caption>
+            <Caption>{`まだ見ぬ自分へ走り出せ。`}</Caption>
           </group>
           <Rig />
           <Environment preset="city" />
         </Canvas>
       </Container>
+      <UICenter pt={50}>
+        <VStack>
+          <UIText fontSize="4xl" fontWeight="bold">
+            OnYourMark!!!
+          </UIText>
+          <UIText fontSize="2xl" fontWeight="semibold" fontStyle="italic">
+            まだ見ぬ自分へ走り出せ。
+          </UIText>
+          <Divider />
+          <UIText fontSize="2xl" fontWeight="semibold">
+            2023 M3-spring 2023/04/30(SUN)
+          </UIText>
+          <UIText fontSize="2xl" fontWeight="semibold">
+            第一展示場 F-14a
+          </UIText>
+          <Box maxW="80%" pt={50} pb={50}>
+            <Heading as="h3" size="lg" lineHeight="tall">
+              <Highlight
+                query={['OnYourMark!!!', '始まり', '挑戦', '再起']}
+                styles={{ px: '2', py: '1', bg: 'black', color: 'white' }}
+              >
+                OnYourMark!!!をテーマに、「始まり」「挑戦」「再起」をイメージした3曲を収録。
+              </Highlight>
+            </Heading>
+            <Heading as="h3" size="lg" lineHeight="tall">
+              <Highlight
+                query={['OnYourMark!!!', '始まり', '挑戦', '再起']}
+                styles={{ px: '2', py: '1', bg: 'black', color: 'white' }}
+              >
+                サークル初のボーカル入り表題曲
+                "OnYourMark!!!"と共に、新たな環境で未知なる未来を目指す人々に向けた1枚!
+              </Highlight>
+            </Heading>
+          </Box>
+          <Divider />
+
+          <Image pt={50} maxW="sm" src={Jacket} alt="onyourmark_jacket" />
+
+          <Heading pt={50}>TrackList</Heading>
+          <OrderedList fontSize="2xl" fontWeight="semibold" pb={50}>
+            <ListItem>OnYourMark!!!</ListItem>
+            <ListItem>Last Challenger [Neurocore]</ListItem>
+            <ListItem>Fire in the Rain [Symphonic Hardcore]</ListItem>
+            <ListItem>OnYourMark!!! (instrumental)</ListItem>
+          </OrderedList>
+
+          <Divider />
+
+          <Heading pt={50}>Credit</Heading>
+          <Heading pt={10} fontSize="3xl">
+            All Music Compose
+          </Heading>
+          <UIText fontSize="4xl">shimaemon</UIText>
+          <Heading pt={10} fontSize="3xl">
+            Illustration
+          </Heading>
+          <UIText fontSize="4xl">猫土瓶</UIText>
+          <Heading pt={10} fontSize="3xl">
+            Design
+          </Heading>
+          <UIText pb={50} fontSize="4xl">
+            ogijun
+          </UIText>
+
+          <Divider />
+
+          <UIText pt={50}>©︎ 保留 2023</UIText>
+        </VStack>
+      </UICenter>
     </div>
   );
 }

@@ -47,14 +47,21 @@ a {
   background: linear-gradient(to top right, #21708C,#5EB0C5);
 }
 
+.center-container {
+  width: 100%;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+}
+
 .logo {
-  top: 25%;
+  top: 6%;
   left: 9%;
 }
 
 @media(max-width: 767px) {
   .logo {
-    top: 45%;
+    top: 5%;
     left: 7%;
   }
 }
