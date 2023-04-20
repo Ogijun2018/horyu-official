@@ -26,6 +26,7 @@
   "devDependencies": {
     "@types/react": "^18.0.8",
     "@types/react-dom": "^18.0.3",
+    "@types/three": "^0.150.2",
     "@typescript-eslint/eslint-plugin": "^5.22.0",
     "@typescript-eslint/parser": "^5.22.0",
     "eslint": "^8.14.0",
@@ -52,6 +53,8 @@
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@react-icons/all-files": "^4.1.0",
+    "@react-three/drei": "^9.65.4",
+    "@react-three/fiber": "^8.12.1",
     "framer-motion": "^6.3.3",
     "gatsby": "^5.8.0",
     "gatsby-plugin-graphql-codegen": "^3.1.1",
@@ -67,9 +70,11 @@
     "github-markdown-css": "^5.2.0",
     "graphql": "^16.6.0",
     "html-react-parser": "^3.0.15",
+    "maath": "^0.5.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.3.1",
-    "sass": "^1.51.0"
+    "sass": "^1.51.0",
+    "three": "^0.151.3"
   }
 }
