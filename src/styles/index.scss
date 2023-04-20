@@ -42,3 +42,19 @@ a {
 .item-empty {
   visibility: hidden;
 }
+
+.full-layout {
+  background: linear-gradient(to top right, #21708C,#5EB0C5);
+}
+
+.logo {
+  top: 25%;
+  left: 9%;
+}
+
+@media(max-width: 767px) {
+  .logo {
+    top: 45%;
+    left: 7%;
+  }
+}
