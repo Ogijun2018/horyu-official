@@ -138,7 +138,7 @@ export default function onyourmark_lp() {
                 styles={{ px: '2', py: '1', bg: 'black', color: 'white' }}
               >
                 サークル初のボーカル入り表題曲
-                "OnYourMark!!!"と共に、新たな環境で未知なる未来を目指す人々に向けた1枚!
+                &quot;OnYourMark!!!&quot;と共に、新たな環境で未知なる未来を目指す人々に向けた1枚!
               </Highlight>
             </Heading>
           </Box>
@@ -146,8 +146,20 @@ export default function onyourmark_lp() {
 
           <Image pt={50} maxW="sm" src={Jacket} alt="onyourmark_jacket" />
 
+          <Heading pt={50}>Music Video</Heading>
+          <div className="youtube">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/kdLnkoQMmFQ"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+          </div>
+
           <Heading pt={50}>TrackList</Heading>
-          <OrderedList fontSize="2xl" fontWeight="semibold" pb={50}>
+          <OrderedList fontSize="2xl" fontWeight="semibold" pb={50} maxW="80%">
             <ListItem>OnYourMark!!!</ListItem>
             <ListItem>Last Challenger [Neurocore]</ListItem>
             <ListItem>Fire in the Rain [Symphonic Hardcore]</ListItem>
@@ -160,16 +172,26 @@ export default function onyourmark_lp() {
           <Heading pt={10} fontSize="3xl">
             All Music Compose
           </Heading>
-          <UIText fontSize="4xl">shimaemon</UIText>
+          <UIText fontSize="4xl">
+            <div className="social-link">
+              <a href="https://twitter.com/shimaemon_o3o?s=20">shimaemon</a>
+            </div>
+          </UIText>
           <Heading pt={10} fontSize="3xl">
             Illustration
           </Heading>
-          <UIText fontSize="4xl">猫土瓶</UIText>
+          <UIText fontSize="4xl">
+            <div className="social-link">
+              <a href="https://twitter.com/cat_earthen_pot?s=20">猫土瓶</a>
+            </div>
+          </UIText>
           <Heading pt={10} fontSize="3xl">
             Design
           </Heading>
           <UIText pb={50} fontSize="4xl">
-            ogijun
+            <div className="social-link">
+              <a href="https://twitter.com/ogijun_design?s=20">ogijun</a>
+            </div>
           </UIText>
 
           <Divider />

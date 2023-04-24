@@ -7,6 +7,5 @@ topImage: "../src/img/onyourmark_jacket.png"
 
 <html>
 <body>
-hogehoge
 </body>
 </html>
