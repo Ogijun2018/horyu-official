@@ -31,8 +31,8 @@ const Page: FC<PageProps> = ({ data }) => (
       <Container>
         <Text fontWeight="semibold">
           2023/04/30{' '}
-          <Link to="/CMCD-003" className="twitter-link">
-            Exhibited at M3-2023 spring.
+          <Link to="/onyourmark/" className="twitter-link">
+            Exhibited at M3-2023 spring. Special Site opened!!!
           </Link>
         </Text>
         <Text fontWeight="semibold">
@@ -110,7 +110,11 @@ const Page: FC<PageProps> = ({ data }) => (
               borderBottom="3px solid gray"
               overflow="hidden"
             >
-              <Link key={slug} className="article-list-item" to={slug}>
+              <Link
+                key={slug}
+                className="article-list-item"
+                to={slug === '/CMCD-003' ? '/onyourmark/' : slug}
+              >
                 <GatsbyImage
                   image={getImage(
                     edge.node.frontmatter.topImage?.childImageSharp
