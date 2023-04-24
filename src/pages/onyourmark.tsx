@@ -26,38 +26,22 @@ import {
 import Logo from '../img/onyourmark_logo.png';
 import Jacket from '../img/onyourmark_jacket.png';
 import { Header } from '../components/header';
+import { useWindowDimensions } from '../util/useWindowDimensions';
 import '../styles/index.scss';
 
 export default function onyourmark_lp() {
-  const [windowSize, setWindowSize] = useState([
-    window.innerWidth,
-    window.innerHeight
-  ]);
-
-  useEffect(() => {
-    const handleWindowResize = () => {
-      setWindowSize([window.innerWidth, window.innerHeight]);
-    };
-    window.addEventListener('resize', handleWindowResize);
-    return () => {
-      window.removeEventListener('resize', handleWindowResize);
-    };
-  }, []);
+  const { width } = useWindowDimensions();
 
   return (
     <div className="wrapper">
       <Header />
-      <Container
-        maxW="100%"
-        height={windowSize[0] / 2.5}
-        className="full-layout"
-      >
+      <Container maxW="100%" height={width / 2.5} className="full-layout">
         <img
           src={Logo}
           className="logo"
           style={{
             position: 'absolute',
-            width: windowSize[0] / 5
+            width: width / 5
           }}
         />
         <Canvas shadows camera={{ position: [30, 40, 0], fov: 13 }}>
