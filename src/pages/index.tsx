@@ -30,6 +30,12 @@ const Page: FC<PageProps> = ({ data }) => (
       </Text>
       <Container>
         <Text fontWeight="semibold">
+          2023/10/29{' '}
+          <Link to="/CMCD-004/" className="twitter-link">
+            Exhibited at M3-2023 autumn.
+          </Link>
+        </Text>
+        <Text fontWeight="semibold">
           2023/04/30{' '}
           <Link to="/onyourmark/" className="twitter-link">
             Exhibited at M3-2023 spring. Special Site opened!!!
@@ -39,12 +45,6 @@ const Page: FC<PageProps> = ({ data }) => (
           2022/10/30{' '}
           <Link to="/CMCD-002" className="twitter-link">
             Exhibited at M3-2022 autumn.
-          </Link>
-        </Text>
-        <Text fontWeight="semibold">
-          2022/04/24{' '}
-          <Link to="/CMCD-001" className="twitter-link">
-            Exhibited at M3-2022 spring.
           </Link>
         </Text>
       </Container>
@@ -218,6 +218,8 @@ export const query = graphql`
                 gatsbyImageData(
                   blurredOptions: { width: 100 }
                   width: 600
+                  height: 600
+                  transformOptions: { fit: CONTAIN }
                   placeholder: BLURRED
                 )
               }
