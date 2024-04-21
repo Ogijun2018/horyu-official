@@ -22,32 +22,43 @@ interface PageProps {
   data: IndexPageQuery;
 }
 
+type News = {
+  date: string;
+  link: string;
+  season: string;
+  isSpecial: boolean;
+};
+
+const newsList: News[] = [
+  { date: '2024/04/28', link: '/CMCD-004', season: 'spring', isSpecial: true },
+  {
+    date: '2023/10/29',
+    link: '/fragment-of-memory',
+    season: 'autumn',
+    isSpecial: false
+  },
+  { date: '2023/04/28', link: '/onyourmark', season: 'spring', isSpecial: true }
+];
+
+function NewsFormat(news: News) {
+  return (
+    <Text fontWeight="semibold">
+      {news.date}{' '}
+      <Link to={news.link} className="twitter-link">
+        Exhibited at M3-{news.date.substring(0, 4)} {news.season}.{' '}
+        {news.isSpecial ? 'Special Site opened!' : ''}
+      </Link>
+    </Text>
+  );
+}
+
 const Page: FC<PageProps> = ({ data }) => (
   <Layout>
     <Stack spacing={3}>
       <Text fontSize="5xl" fontWeight="extrabold">
         News
       </Text>
-      <Container>
-        <Text fontWeight="semibold">
-          2023/10/29{' '}
-          <Link to="/CMCD-004/" className="twitter-link">
-            Exhibited at M3-2023 autumn.
-          </Link>
-        </Text>
-        <Text fontWeight="semibold">
-          2023/04/30{' '}
-          <Link to="/onyourmark/" className="twitter-link">
-            Exhibited at M3-2023 spring. Special Site opened!!!
-          </Link>
-        </Text>
-        <Text fontWeight="semibold">
-          2022/10/30{' '}
-          <Link to="/CMCD-002" className="twitter-link">
-            Exhibited at M3-2022 autumn.
-          </Link>
-        </Text>
-      </Container>
+      <Container>{newsList.map(news => NewsFormat(news))}</Container>
       <Text fontSize="5xl" fontWeight="extrabold">
         Member
       </Text>
@@ -113,7 +124,7 @@ const Page: FC<PageProps> = ({ data }) => (
               <Link
                 key={slug}
                 className="article-list-item"
-                to={slug === '/CMCD-003' ? '/onyourmark/' : slug}
+                to={linkToLP(slug)}
               >
                 <GatsbyImage
                   image={getImage(
@@ -200,6 +211,17 @@ const Page: FC<PageProps> = ({ data }) => (
     </Stack>
   </Layout>
 );
+
+function linkToLP(slug: string): string {
+  switch (slug) {
+    case '/CMCD-003':
+      return '/onyourmark';
+    case '/CMCD-004':
+      return '/chaosparkle';
+    default:
+      return slug;
+  }
+}
 
 export default Page;
 
