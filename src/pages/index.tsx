@@ -30,7 +30,12 @@ type News = {
 };
 
 const newsList: News[] = [
-  { date: '2024/04/28', link: '/CMCD-004', season: 'spring', isSpecial: true },
+  {
+    date: '2024/04/28',
+    link: '/chaosparkle',
+    season: 'spring',
+    isSpecial: true
+  },
   {
     date: '2023/10/29',
     link: '/fragment-of-memory',
