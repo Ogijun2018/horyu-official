@@ -1,6 +1,6 @@
 ---
 title: "Fragment of memory"
-slug: /CMCD-004
+slug: /fragment-of-memory
 date: 2023-10-29T00:00:00
 topImage: "../src/img/fragment_of_memory_jacket.png"
 ---

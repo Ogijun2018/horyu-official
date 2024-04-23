@@ -7,3 +7,7 @@ public/
 
 # gatsby-plugin-graphql-codegen
 types/graphql-types.d.ts
+
+# DS_Store
+src/.DS_Store
+src/img/.DS_Store
