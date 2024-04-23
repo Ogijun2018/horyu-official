@@ -21,9 +21,10 @@ import {
   Box,
   OrderedList,
   ListItem,
-  Image
+  Image,
+  Spacer
 } from '@chakra-ui/react';
-import Logo from '../img/onyourmark_logo.png';
+
 import Jacket from '../img/chaosparkle_jacket.png';
 import { Header } from '../components/header';
 import { useWindowDimensions } from '../util/useWindowDimensions';
@@ -35,65 +36,21 @@ export default function onyourmark_lp() {
   return (
     <div className="wrapper">
       <Header />
-      <Container maxW="100%" height={width / 2.5} className="full-layout">
-        <img
-          src={Logo}
-          className="logo"
-          style={{
-            position: 'absolute',
-            width: width / 5
-          }}
-        />
-        <Canvas shadows camera={{ position: [30, 40, 0], fov: 13 }}>
-          <group position={[-2, 0, -5]}>
-            <Center top>
-              <Starter rotation={[0.55, 1, -0.03]} scale={0.6} />
-            </Center>
-            <Center top position={[-2, 0, 2]}>
-              <mesh castShadow>
-                <sphereGeometry args={[0.25, 64, 64]} />
-                <meshStandardMaterial color="lightblue" />
-              </mesh>
-            </Center>
-            <Center top position={[2.5, 0, 0]}>
-              <mesh castShadow rotation={[0, Math.PI / 4, 0]}>
-                <boxGeometry args={[0.5, 0.5, 0.5]} />
-                <meshStandardMaterial color="indianred" />
-              </mesh>
-            </Center>
-            <Center top position={[0, 0, -4]}>
-              <mesh castShadow>
-                <cylinderGeometry args={[0.4, 0.4, 0.4]} />
-                <meshStandardMaterial color="#5c94cc" />
-              </mesh>
-            </Center>
-            <AccumulativeShadows
-              temporal
-              frames={100}
-              color="#5EB0C5"
-              colorBlend={2}
-              toneMapped={true}
-              alphaTest={0.9}
-              opacity={2}
-              scale={10}
-            >
-              <RandomizedLight
-                amount={8}
-                radius={4}
-                ambient={0.5}
-                intensity={1}
-                position={[-5, 5, -6]}
-                bias={0.001}
-              />
-            </AccumulativeShadows>
-            <Caption>{`混沌と煌めきが交差する――`}</Caption>
-          </group>
-          <Rig />
-          <Environment preset="city" />
-        </Canvas>
-      </Container>
       <UICenter pt={50}>
         <VStack>
+          <div className="youtube">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/bB7RVGvE8AA?si=PRrnbTfzOtCBOwT2"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <Spacer />
           <UIText fontSize="4xl" fontWeight="bold">
             Chaosparkle
           </UIText>
@@ -132,20 +89,6 @@ export default function onyourmark_lp() {
           </Box>
           <Divider />
           <Image pt={50} maxW="sm" src={Jacket} alt="onyourmark_jacket" />
-          <Heading pt={50}>Music Video</Heading>
-          <Heading as="h3" size="md">
-            Comming Soon...
-          </Heading>
-          {/* <div className="youtube">
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/kdLnkoQMmFQ"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
-          </div> */}
           <Heading pt={50}>TrackList</Heading>
           <OrderedList fontSize="2xl" fontWeight="semibold" pb={50} maxW="80%">
             <ListItem>Ruby on Cakes [Futurecore]</ListItem>
