@@ -42,12 +42,12 @@ export default function onyourmark_lp() {
             <iframe
               width="560"
               height="315"
-              src="https://www.youtube.com/embed/bB7RVGvE8AA?si=PRrnbTfzOtCBOwT2"
+              src="https://www.youtube.com/embed/dgjbRbtZ3ak?si=h4DAZ1bYdoEl3BOa"
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
+              allowfullscreen
             ></iframe>
           </div>
           <Spacer />
