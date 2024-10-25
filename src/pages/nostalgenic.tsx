@@ -1,6 +1,5 @@
-import React, { useLayoutEffect, useState, useEffect } from 'react';
+import React from 'react';
 import {
-  Container,
   Center as UICenter,
   Text as UIText,
   VStack,
@@ -11,17 +10,14 @@ import {
   OrderedList,
   ListItem,
   Image,
-  Spacer,
+  Spacer
 } from '@chakra-ui/react';
 
 import Jacket from '../img/nostalgenic_jacket.png';
 import { Header } from '../components/header';
-import { useWindowDimensions } from '../util/useWindowDimensions';
 import '../styles/index.scss';
 
 export default function onyourmark_lp() {
-  const { width } = useWindowDimensions();
-
   return (
     <div className="wrapper">
       <Header />
@@ -76,7 +72,7 @@ export default function onyourmark_lp() {
             </Heading>
           </Box>
           <Divider />
-          <Image pt={50} maxW="sm" src={Jacket} alt="onyourmark_jacket" />
+          <Image pt={50} maxW="sm" src={Jacket} alt="nostalgenic_jacket" />
           <Heading pt={50}>TrackList</Heading>
           <OrderedList fontSize="2xl" fontWeight="semibold" pb={50} maxW="80%">
             <ListItem>CONTINUE [CHIPTUNE]</ListItem>
