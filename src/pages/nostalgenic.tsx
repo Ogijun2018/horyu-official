@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState, useEffect } from "react";
+import React, { useLayoutEffect, useState, useEffect } from 'react';
 import {
   Container,
   Center as UICenter,
@@ -12,12 +12,12 @@ import {
   ListItem,
   Image,
   Spacer,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
-import Jacket from "../img/nostalgenic_jacket.png";
-import { Header } from "../components/header";
-import { useWindowDimensions } from "../util/useWindowDimensions";
-import "../styles/index.scss";
+import Jacket from '../img/nostalgenic_jacket.png';
+import { Header } from '../components/header';
+import { useWindowDimensions } from '../util/useWindowDimensions';
+import '../styles/index.scss';
 
 export default function onyourmark_lp() {
   const { width } = useWindowDimensions();
@@ -56,16 +56,16 @@ export default function onyourmark_lp() {
           <Box maxW="80%" pt={50} pb={50}>
             <Heading as="h3" size="lg" lineHeight="tall">
               <Highlight
-                query={["NOSTALGENIC"]}
-                styles={{ px: "2", py: "2", bg: "blue.300", color: "black" }}
+                query={['NOSTALGENIC']}
+                styles={{ px: '2', py: '2', bg: 'blue.300', color: 'black' }}
               >
                 あの頃に、帰ろう__。
               </Highlight>
             </Heading>
             <Heading as="h3" size="lg" lineHeight="tall">
               <Highlight
-                query={["ワクワク", "心温まる", "なんだか懐かしい"]}
-                styles={{ px: "2", py: "2", bg: "blue.300", color: "black" }}
+                query={['ワクワク', '心温まる', 'なんだか懐かしい']}
+                styles={{ px: '2', py: '2', bg: 'blue.300', color: 'black' }}
               >
                 懐かしさをテーマに、ワクワク 心温まる なんだか懐かしい
                 そんな新作4曲を収録。

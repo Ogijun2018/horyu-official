@@ -1,11 +1,11 @@
-import React from "react";
-import type { FC } from "react";
-import { graphql, Link } from "gatsby";
-import { Layout } from "../components/layout";
-import { CommingSoon } from "../components/comming-soon";
-import type { IndexPageQuery } from "../../types/graphql-types";
-import { HiOutlineMail } from "@react-icons/all-files/hi/HiOutlineMail";
-import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
+import React from 'react';
+import type { FC } from 'react';
+import { graphql, Link } from 'gatsby';
+import { Layout } from '../components/layout';
+import { CommingSoon } from '../components/comming-soon';
+import type { IndexPageQuery } from '../../types/graphql-types';
+import { HiOutlineMail } from '@react-icons/all-files/hi/HiOutlineMail';
+import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter';
 import {
   Box,
   Badge,
@@ -14,9 +14,9 @@ import {
   Container,
   Button,
   HStack,
-  Flex,
-} from "@chakra-ui/react";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+  Flex
+} from '@chakra-ui/react';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 interface PageProps {
   data: IndexPageQuery;
@@ -31,32 +31,32 @@ type News = {
 
 const newsList: News[] = [
   {
-    date: "2024/10/27",
-    link: "/nostalgenic",
-    season: "autumn",
-    isSpecial: true,
+    date: '2024/10/27',
+    link: '/nostalgenic',
+    season: 'autumn',
+    isSpecial: true
   },
   {
-    date: "2024/04/28",
-    link: "/chaosparkle",
-    season: "spring",
-    isSpecial: true,
+    date: '2024/04/28',
+    link: '/chaosparkle',
+    season: 'spring',
+    isSpecial: true
   },
   {
-    date: "2023/10/29",
-    link: "/fragment-of-memory",
-    season: "autumn",
-    isSpecial: false,
-  },
+    date: '2023/10/29',
+    link: '/fragment-of-memory',
+    season: 'autumn',
+    isSpecial: false
+  }
 ];
 
 function NewsFormat(news: News) {
   return (
     <Text fontWeight="semibold">
-      {news.date}{" "}
+      {news.date}{' '}
       <Link to={news.link} className="twitter-link">
-        Exhibited at M3-{news.date.substring(0, 4)} {news.season}.{" "}
-        {news.isSpecial ? "Special Site opened!" : ""}
+        Exhibited at M3-{news.date.substring(0, 4)} {news.season}.{' '}
+        {news.isSpecial ? 'Special Site opened!' : ''}
       </Link>
     </Text>
   );
@@ -74,7 +74,7 @@ const Page: FC<PageProps> = ({ data }) => (
       </Text>
       <Container>
         <Text fontSize="2xl" fontWeight="light">
-          All music compose:{" "}
+          All music compose:{' '}
           <a
             href="https://twitter.com/shimaemon_o3o?s=20&t=EuOSrezuLVXAOaS4SRM80w"
             className="twitter-link"
@@ -83,7 +83,7 @@ const Page: FC<PageProps> = ({ data }) => (
           </a>
         </Text>
         <Text fontSize="2xl" fontWeight="light">
-          Illustration:{" "}
+          Illustration:{' '}
           <a
             href="https://twitter.com/cat_earthen_pot?s=20&t=EuOSrezuLVXAOaS4SRM80w"
             className="twitter-link"
@@ -92,7 +92,7 @@ const Page: FC<PageProps> = ({ data }) => (
           </a>
         </Text>
         <Text fontSize="2xl" fontWeight="light">
-          Design, Movie, Web:{" "}
+          Design, Movie, Web:{' '}
           <a
             href="https://twitter.com/ogijun_design?s=20&t=EuOSrezuLVXAOaS4SRM80w"
             className="twitter-link"
@@ -140,7 +140,7 @@ const Page: FC<PageProps> = ({ data }) => (
                   image={getImage(
                     edge.node.frontmatter.topImage?.childImageSharp
                   )}
-                  alt={edge.node.frontmatter.title ?? "no title"}
+                  alt={edge.node.frontmatter.title ?? 'no title'}
                 />
                 <Box p="6">
                   <Box display="flex">
@@ -175,7 +175,7 @@ const Page: FC<PageProps> = ({ data }) => (
                     lineHeight="tight"
                     isTruncated
                   >
-                    {edge.node.frontmatter.title ?? "no title"}
+                    {edge.node.frontmatter.title ?? 'no title'}
                   </Box>
 
                   {/* <Box>
@@ -224,12 +224,12 @@ const Page: FC<PageProps> = ({ data }) => (
 
 function linkToLP(slug: string): string {
   switch (slug) {
-    case "/CMCD-003":
-      return "/onyourmark";
-    case "/CMCD-004":
-      return "/chaosparkle";
-    case "/CMCD-005":
-      return "/nostalgenic";
+    case '/CMCD-003':
+      return '/onyourmark';
+    case '/CMCD-004':
+      return '/chaosparkle';
+    case '/CMCD-005':
+      return '/nostalgenic';
     default:
       return slug;
   }
