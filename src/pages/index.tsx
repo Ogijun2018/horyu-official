@@ -31,6 +31,12 @@ type News = {
 
 const newsList: News[] = [
   {
+    date: '2024/10/27',
+    link: '/nostalgenic',
+    season: 'autumn',
+    isSpecial: true
+  },
+  {
     date: '2024/04/28',
     link: '/chaosparkle',
     season: 'spring',
@@ -41,8 +47,7 @@ const newsList: News[] = [
     link: '/fragment-of-memory',
     season: 'autumn',
     isSpecial: false
-  },
-  { date: '2023/04/28', link: '/onyourmark', season: 'spring', isSpecial: true }
+  }
 ];
 
 function NewsFormat(news: News) {
@@ -63,7 +68,7 @@ const Page: FC<PageProps> = ({ data }) => (
       <Text fontSize="5xl" fontWeight="extrabold">
         News
       </Text>
-      <Container>{newsList.map(news => NewsFormat(news))}</Container>
+      <Container>{newsList.map((news) => NewsFormat(news))}</Container>
       <Text fontSize="5xl" fontWeight="extrabold">
         Member
       </Text>
@@ -223,6 +228,8 @@ function linkToLP(slug: string): string {
       return '/onyourmark';
     case '/CMCD-004':
       return '/chaosparkle';
+    case '/CMCD-005':
+      return '/nostalgenic';
     default:
       return slug;
   }
