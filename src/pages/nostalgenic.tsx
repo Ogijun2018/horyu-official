@@ -14,7 +14,7 @@ import {
   Spacer,
 } from "@chakra-ui/react";
 
-import Jacket from "../img/chaosparkle_jacket.png";
+import Jacket from "../img/nostalgenic_jacket.png";
 import { Header } from "../components/header";
 import { useWindowDimensions } from "../util/useWindowDimensions";
 import "../styles/index.scss";
@@ -31,7 +31,7 @@ export default function onyourmark_lp() {
             <iframe
               width="560"
               height="315"
-              src="https://www.youtube.com/embed/dgjbRbtZ3ak?si=h4DAZ1bYdoEl3BOa"
+              src="https://www.youtube.com/embed/xroZzJ2jhiU?si=n9KcTl6O9T2spZ9f"
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -44,7 +44,7 @@ export default function onyourmark_lp() {
             NOSTALGENIC
           </UIText>
           <UIText fontSize="2xl" fontWeight="semibold" fontStyle="italic">
-            hogehoge
+            あの頃に、帰ろう__。
           </UIText>
           <Divider />
           <UIText fontSize="2xl" fontWeight="semibold">
@@ -57,23 +57,22 @@ export default function onyourmark_lp() {
             <Heading as="h3" size="lg" lineHeight="tall">
               <Highlight
                 query={["NOSTALGENIC"]}
-                styles={{ px: "2", py: "2", bg: "yellow.300", color: "black" }}
+                styles={{ px: "2", py: "2", bg: "blue.300", color: "black" }}
               >
-                混沌と煌めきが織りなす &quot;Chaosparkle&quot;
-                を体感せよ＿＿＿。
+                あの頃に、帰ろう__。
               </Highlight>
             </Heading>
             <Heading as="h3" size="lg" lineHeight="tall">
               <Highlight
-                query={["音ゲーライク", "宝石"]}
-                styles={{ px: "2", py: "2", bg: "yellow.300", color: "black" }}
+                query={["ワクワク", "心温まる", "なんだか懐かしい"]}
+                styles={{ px: "2", py: "2", bg: "blue.300", color: "black" }}
               >
-                今回も音ゲーライクを軸にしつつ、宝石をテーマにしたFUTURECORE、ARTCORE、HARD
-                NRG、UPLIFTING TRANCEの書き下ろし4曲を収録！！
+                懐かしさをテーマに、ワクワク 心温まる なんだか懐かしい
+                そんな新作4曲を収録。
               </Highlight>
             </Heading>
             <Heading as="h3" size="lg" lineHeight="tall">
-              進化し続ける保留サウンドはまだまだ止まらない！！！
+              保留がお送りするサウンド、ビジュアル体験が、あなたの思い出を彩ります。
             </Heading>
           </Box>
           <Divider />
